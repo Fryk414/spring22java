@@ -1,0 +1,40 @@
+
+.menu {
+    height: 46px;
+    padding: 0 14px;
+    border-bottom: solid 1px #ddd;
+}
+
+.menu .centered{
+    display:flex;
+    justify-content: space-between;
+}
+
+.menu ul {
+    display: flex;
+}
+
+.menu li {
+    padding-right: 5px;
+    padding-left: 5px;
+    
+}
+
+.menu li:last-child  {
+  
+}
+
+.menu li a{
+    color: grey;
+}
+
+.menu li.selected a{
+font-weight: bold;
+color: black;
+background-color: lightgrey;
+}
+
+.menu .minor li a{
+   font-size: smaller;
+}
+
