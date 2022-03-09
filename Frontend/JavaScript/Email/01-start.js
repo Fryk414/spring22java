@@ -30,12 +30,14 @@ function sendForm() {
 
     if (isValidEmailAddress(inputEmail.value)) {
 
-        /* insert code here */
-
-    } else {
-
-        /* insert code here */
-        
+       resultArea.classList.add("happy")
+       resultArea.innerText = "SUCCESS!"
+       return
+    } 
+    else {
+        resultArea.innerText = "The email you have entered doesn't have the right format, please try again."
+        resultArea.classList.add("sad")
+        return
     }
 
 }
