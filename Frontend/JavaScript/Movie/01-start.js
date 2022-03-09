@@ -11,9 +11,9 @@ function leftStar() {
 }
 
 function clickStar(number) {
-    /* insert code here */
-
+    const resultArea = document.querySelector("section")
     chosenStars = number
+    resultArea.innerText = "you gave a " + number + " star rating"
 }
 
 function resetStars() {
@@ -29,6 +29,7 @@ function lightAllStarsUpTo(number) {
     for (let i = 1; i <= number; i++) {
         allStars[i - 1].src = "stars/star.png"
     }
-
-    /* insert code here */
+    for (let i = 5; i>number; i--){
+        allStars[i-1].src = "stars/star-gray.png"
+    }
 }
