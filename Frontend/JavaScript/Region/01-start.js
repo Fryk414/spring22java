@@ -9,6 +9,7 @@ const countyData = [
     { countyCode: "01", countyName: "Stockholm län", municipalities: [{ code: "14", name: "Upplands Väsby" }, { code: "15", name: "Vallentuna" }, { code: "17", name: "Österåker" }] },
     { countyCode: "03", countyName: "Uppsala län", municipalities: [{ code: "05", name: "Håbo" }, { code: "19", name: "Älvkarleby" }, { code: "30", name: "Knivsta" }] },
     { countyCode: "04", countyName: "Södermanlands län", municipalities: [{ code: "28", name: "Vingåker" }, { code: "61", name: "Gnesta" }, { code: "80", name: "Nyköping" }] },
+    { countyCode: "05", countyName: "Östergötalands län", municipalities: [{code: "09", name: "Ödeshög"}, {code: "12", name:"ydre"}]}
     /* insert code here (one more county with municipalites) */
     // Here is a list of län counties and municipalites: https://www.scb.se/hitta-statistik/regional-statistik-och-kartor/regionala-indelningar/lan-och-kommuner/lan-och-kommuner-i-kodnummerordning/
 ]
@@ -36,7 +37,19 @@ function renderMunicipality() {
     }
     let html= `<option value="">Välj kommun...</option>`
 
-    /* insert code here */
+    if (selectedCountyCode != ""){
+        municipality.classList.remove("hide")
+        let numb = selectedCountyCode
+    
+        for (let c of countyData.find(c => c.countyCode==numb).municipalities){
+            const name = c.name
+            const code = c.code
+    
+            html += `<option value="${code}">${code} ${name}</option>`
+        }
+
+    }
+    municipality.innerHTML = html
 
 }
 
